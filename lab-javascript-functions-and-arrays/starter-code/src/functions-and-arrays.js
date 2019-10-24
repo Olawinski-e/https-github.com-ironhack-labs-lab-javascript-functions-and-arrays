@@ -116,17 +116,16 @@ const wordsFind = [
   "disobedience"
 ];
 
-function doesWordExist(wordsFind) {
+function doesWordExist(wordsFind, search) {
   if (wordsFind.length === 0) return false;
   else {
-    let newArr = [];
-    wordsFind.forEach(function(word) {
-      if (newArr.indexOf(word) === 1) {
-        return false;
+    for (let i = 0; i < wordsFind.length; i++) {
+      if (search === wordsFind[i]) {
+        return true;
       }
-    });
-    return true;
+    }
   }
+  return false;
 }
 
 // Counting Repetition
@@ -144,7 +143,19 @@ const wordsCount = [
   "matter"
 ];
 
-function howManyTimes(wordsCount) {}
+function howManyTimes(wordsCount, search) {
+  if (wordsCount.length === 0) {
+    return 0;
+  } else {
+    let counter = 0;
+    wordsCount.forEach(function(word) {
+      if (word == search) {
+        counter++;
+      }
+    });
+    return counter;
+  }
+}
 
 // Bonus
 
@@ -443,3 +454,5 @@ const matrix = [
   ],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+function greatestProduct() {}
