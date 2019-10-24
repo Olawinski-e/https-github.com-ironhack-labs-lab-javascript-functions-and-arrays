@@ -22,13 +22,12 @@ const words = [
 ];
 
 function findLongestWord(words) {
-  if (words !== undefined) {
+  if (words.length === 0) return null;
+  else {
     let longestWord = words.sort(function(a, b) {
       return b.length - a.length;
     });
     return longestWord[0];
-  } else {
-    return null;
   }
 }
 
@@ -49,11 +48,10 @@ function sumArray(numbers) {
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(numbersAvg) {
-  let sum = 0;
-  for (i = 0; i < numbersAvg.length; i++) {
-    sum += numbersAvg[i];
-  }
-  return sumArray / numbersAvg[i];
+  if (numbersAvg.length === 0) return null;
+  let sum = sumArray(numbersAvg);
+  let avg = sum / numbersAvg.length;
+  return avg;
 }
 
 // Array of Strings
@@ -70,7 +68,13 @@ const wordsArr = [
   "palace"
 ];
 
-function averageWordLength(wordsArr) {}
+function averageWordLength(wordsArr) {
+  if (wordsArr.length === 0) return null;
+  else {
+    const average = wordsArr.join("").length / wordsArr.length;
+    return average;
+  }
+}
 
 // Unique Arrays
 const wordsUnique = [
@@ -87,7 +91,18 @@ const wordsUnique = [
   "bring"
 ];
 
-function uniquifyArray(wordsUnique) {}
+function uniquifyArray(wordsUnique) {
+  if (wordsUnique.length === 0) return [];
+  else {
+    let newArr = [];
+    wordsUnique.forEach(function(word) {
+      if (newArr.indexOf(word) === -1) {
+        newArr.push(word);
+      }
+    });
+    return newArr;
+  }
+}
 
 // Finding Elements
 const wordsFind = [
@@ -101,7 +116,18 @@ const wordsFind = [
   "disobedience"
 ];
 
-function doesWordExist(wordsFind) {}
+function doesWordExist(wordsFind) {
+  if (wordsFind.length === 0) return false;
+  else {
+    let newArr = [];
+    wordsFind.forEach(function(word) {
+      if (newArr.indexOf(word) === 1) {
+        return false;
+      }
+    });
+    return true;
+  }
+}
 
 // Counting Repetition
 const wordsCount = [
